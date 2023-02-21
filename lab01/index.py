@@ -10,7 +10,7 @@ data = input.getInput('./data/lab01.csv')
 # show input data
 plt.scatter(data[:,0], data[:,1], marker='x', color='black')
 
-plt.title("Input data")
+plt.title('Input data')
 plt.show()
 
 # train ms_model
@@ -40,8 +40,8 @@ scores, num_clusters = quality.getQuality(data, values)
 
 # show quality
 for i, score in zip(values, scores):
-    print("Number of clusters = ", i)
-    print("Silhouette score = ", score)
+    print('Number of clusters = ', i)
+    print('Silhouette score = ', score)
 
 print('Optimal cluster number: ', num_clusters)
 
@@ -57,7 +57,7 @@ output, x_vals, y_vals = clusters.getClusterAreas(data)
 # show cluster areas
 plt.figure(1)
 plt.clf()
-plt.imshow(output, interpolation="nearest", extent=(x_vals.min(), x_vals.max(), y_vals.min(), y_vals.max()), cmap=plt.cm.Paired, aspect="auto", origin="lower")
+plt.imshow(output, interpolation='nearest', extent=(x_vals.min(), x_vals.max(), y_vals.min(), y_vals.max()), cmap=plt.cm.Paired, aspect='auto', origin='lower')
 
 for i, marker in zip(range(num_clusters), markers):
     plt.scatter(data[labels==i, 0], data[labels==i, 1], marker = marker)
@@ -65,5 +65,5 @@ for i, marker in zip(range(num_clusters), markers):
     cluster_center = cluster_centers[i]
     plt.plot(cluster_center[0], cluster_center[1], marker = 'o', markeredgecolor = 'black', markersize = 15)
 
-plt.title("Cluster areas (k = {})".format(num_clusters))
+plt.title('Cluster areas (k = {})'.format(num_clusters))
 plt.show()
