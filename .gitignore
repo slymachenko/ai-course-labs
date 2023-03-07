@@ -1,1 +1,3 @@
 __pycache__
+/lab03/data/*.csv
+/lab03/num_guess.model
